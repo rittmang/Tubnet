@@ -1,0 +1,15 @@
+{
+  "name": "Tubnet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/scripts/browser/main.js",
+  "dependencies": {
+    "electron": "^6.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ritom Gupta",
+  "license": "ISC"
+}
