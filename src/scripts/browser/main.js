@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-
+const path = require('path')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -13,6 +13,7 @@ function createWindow () {
       nodeIntegration: true
     }
   })
+
 
   // and load the index.html of the app.
   win.loadFile('./src/html/index.html')
@@ -50,3 +51,29 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+let pyProc = null
+let pyPort = null
+
+const selectPort = () => {
+  pyPort = 4242
+  return pyPort
+}
+
+const createPyProc = () => {
+  let port = '' + selectPort()
+  let script = path.join(__dirname, 'src/scripts/python_scripts', 'sn-api.py')
+  pyProc = require('child_process').spawn('python3', [script, port])
+  if (pyProc != null) {
+    console.log('child process success')
+  }
+}
+
+const exitPyProc = () => {
+  pyProc.kill()
+  pyProc = null
+  pyPort = null
+}
+
+app.on('ready', createPyProc)
+app.on('will-quit', exitPyProc)

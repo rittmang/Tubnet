@@ -7,10 +7,16 @@
   </head>
   <body>
     <h1>Hello World!</h1>
+    <p>Input something like <code>192.168.1.1</code></p>
+    <!-- <p>This calculator supports <code>+-*/^()</code>, whitespaces, and integers and floating numbers.</p> -->
+    <!-- input is for input, div is for output -->
+    <input id="ip" value="255.255.255.255"></input>
+    <input id="subnet" value="3"></input>
+    <div id="start_results"></div>
+    <div id="end_results"></div>
     <button type="button" onclick="python">Push Me</button>
-      <script>
-        // const exec=require('child_process').exec;
-        let python = spawn('python', [path.join(app.getAppPath(), '..', 'src/python_scripts/my_script.py')]);
-      </script>
   </body>
+  <script>
+      require('../scripts/browser/renderer.js')
+  </script>
 </html>

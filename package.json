@@ -1,15 +1,21 @@
 {
-  "name": "Tubnet",
+  "name": "subnet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shows subnets I guess",
   "main": "./src/scripts/browser/main.js",
-  "dependencies": {
-    "electron": "^6.0.12"
-  },
-  "devDependencies": {},
   "scripts": {
     "start": "electron ."
   },
+  "keywords": [
+    "subnet"
+  ],
   "author": "Ritom Gupta",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^6.0.12"
+  },
+  "dependencies": {
+    "zeromq": "^5.1.0",
+    "zerorpc": "^0.9.8"
+  }
 }
