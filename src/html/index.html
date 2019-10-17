@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self';" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self';" /> -->
   </head>
   <body>
     <h1>Hello World!</h1>
+    <button type="button" onclick="runPython()">Push Me</button>
+      <script>
+        const exec=require('child_process').exec;
+        let runPython=function(){
+          let childProcess=exec("python subnetting.py",["192.168.1.1"]);
+        }
+      </script>
   </body>
 </html>
