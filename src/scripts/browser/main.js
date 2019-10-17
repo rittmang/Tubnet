@@ -62,8 +62,9 @@ const selectPort = () => {
 
 const createPyProc = () => {
   let port = '' + selectPort()
-  let script = path.join(__dirname, 'src/scripts/python_scripts', 'sn-api.py')
+  let script = path.join(__dirname, '../python_scripts', 'sn-api.py')
   pyProc = require('child_process').spawn('python3', [script, port])
+  console.log('path found? wtf' + script)
   if (pyProc != null) {
     console.log('child process success')
   }

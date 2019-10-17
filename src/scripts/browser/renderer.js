@@ -11,8 +11,10 @@ let subnet = document.querySelector('#subnet')
 let result1 = document.querySelector('#start_results')
 let result2 = document.querySelector('#end_results')
 let booton = document.getElementById('booton')
-subnet.addEventListener('input', () => {
-  client.invoke("calc", ip.value, subnet.value, (error, range_start,range_end) => {
+console.log("Queries and elements found")
+booton.addEventListener('click', () => {
+    console.log("Event happening")
+    client.invoke("calc", ip.value, subnet.value, (error, range_start,range_end) => {
     if(error) {
       console.error(error)
     } else {
