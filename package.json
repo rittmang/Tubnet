@@ -12,10 +12,10 @@
   "author": "Ritom Gupta",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^6.0.12"
+    "electron": "^6.0.12",
+    "electron-rebuild": "^1.8.6"
   },
   "dependencies": {
-    "zeromq": "^5.1.0",
     "zerorpc": "^0.9.8"
   }
 }

@@ -1,4 +1,5 @@
 from subnetting import do_stuff
+import traceback
 import sys
 import zerorpc
 
@@ -6,8 +7,10 @@ class SNApi(object):
     def calc(self, s, u):
         """based on the input text, return the int result"""
         try:
+            #gevent.sleep(seconds=20)
             return do_stuff(s, u)
         except Exception as e:
+            print(traceback.format_exc())
             return 0.0
     def echo(self, text):
         """echo any text"""

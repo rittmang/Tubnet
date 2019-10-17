@@ -33,6 +33,8 @@ def add_binary_nums(x, y):
 
 
 def do_stuff(s,u):
+    s=s.decode("utf-8")
+    u=int(u.decode("utf-8"))
     prefix_length=0
     ip_addr_bin = ""
     while True:
