@@ -33,8 +33,8 @@ def add_binary_nums(x, y):
 
 
 def do_stuff(s,u):
-    s=s.decode("utf-8")
-    u=int(u.decode("utf-8"))
+    #s=s.decode("utf-8")
+    #u=int(u.decode("utf-8"))
     prefix_length=0
     ip_addr_bin = ""
     while True:
@@ -100,9 +100,9 @@ def do_stuff(s,u):
     
 if __name__ == '__main__':
     ss = [
-        "192.168.1.1"
+        "192.168.10.1"
     ]
-    u=5 #u is number of subnets basically
+    u=6 #u is number of subnets basically
     for s in ss:
         range_start,range_end = do_stuff(s,u)
         print('Output of {} = {},{}'.format(s,range_start,range_end))

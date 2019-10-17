@@ -2,16 +2,18 @@ from subnetting import do_stuff
 import traceback
 import sys
 import zerorpc
-
+#lasters=[]
 class SNApi(object):
     def calc(self, s, u):
         """based on the input text, return the int result"""
         try:
-            #gevent.sleep(seconds=20)
-            return do_stuff(s, u)
+            starters, enders = do_stuff(s,u)#use s,u,mode=1 and 2?
+            starters.append('+')
+            starters.append(enders)
+            return starters
         except Exception as e:
-            print(traceback.format_exc())
-            return 0.0
+            #print(traceback.format_exc())
+            return traceback.format_exc()
     def echo(self, text):
         """echo any text"""
         return text

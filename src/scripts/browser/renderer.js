@@ -14,13 +14,15 @@ let booton = document.getElementById('booton')
 console.log("Queries and elements found")
 booton.addEventListener('click', () => {
     console.log("Event happening")
-    client.invoke("calc", ip.value, subnet.value, (error, range_start,range_end) => {
+    client.invoke("calc", ip.value, subnet.value, (error, combined) => {
     if(error) {
       console.error(error)
     } else {
-      result1.textContent = range_start
-      result2.textContent = range_end
+      
+     result1.textContent = combined //combined is of type object. Either figure out how to split this, or interleave IPs
+      //result2.textContent = range_end
     }
   })
+  
 })
 ip.dispatchEvent(new Event('input'))
