@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self';" /> -->
-  </head>
-  <body>
-    <h1>Tubnet!</h1>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tubnet</title>
+  <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self';" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <script>
+
+    function CheckOnlineStatus(msg) {
+
+      var status = document.getElementById("status");
+      var condition = navigator.onLine ? "ONLINE" : "OFFLINE. NET CHAALU KAR YAAR";
+      var state = document.getElementById("state");
+      state.innerHTML = condition;
+
+    }
+
+    function Pageloaded() {
+      CheckOnlineStatus("load");
+      document.body.addEventListener("offline", function () {
+        CheckOnlineStatus("offline")
+      }, false);
+      document.body.addEventListener("online", function () {
+        CheckOnlineStatus("online")
+      }, false);
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://unpkg.com/popper.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
+  <script src="https://kit.fontawesome.com/c893428da3.js"></script>
+
+</head>
+
+<body onload="Pageloaded()">
+  <div id="status">
+    <p id="state">Application Status:
+    </p>
+  </div>
+</body>
+
+<body>
+  <div class=".mx-auto px-4">
+    <br>
+    <h1 class="display-6">Tubnet!</h1>
     <p>Input something like <code>192.168.1.1</code></p>
     <!-- <p>This calculator supports <code>+-*/^()</code>, whitespaces, and integers and floating numbers.</p> -->
     <!-- input is for input, div is for output -->
@@ -15,8 +56,10 @@
     <button type="button" id="booton">Push Me</button>
     <div id="start_results"></div>
     <div id="end_results"></div>
-  </body>
-  <script>
-      require('../scripts/browser/renderer.js')
-  </script>
+  </div>
+</body>
+<script>
+  require('../scripts/browser/renderer.js')
+</script>
+
 </html>
