@@ -18,7 +18,7 @@
     function CheckOnlineStatus(msg) {
 
       var status = document.getElementById("status");
-      var condition = navigator.onLine ? "Scripts loaded correctly" : "OFFLINE. Couldn't load scripts";
+      var condition = navigator.onLine ? "Scripts loaded correctly" : "OFFLINE. Couldn't load scripts. Go online and CTRL+R";
       var state = document.getElementById("state");
       state.innerHTML = condition;
 
@@ -46,7 +46,12 @@
       </button>
   </div>
 </body>
-
+<!-- <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+  </div> -->
 <body>
   <div class=".mx-auto px-4">
     <br>
@@ -54,10 +59,20 @@
     <p>Input something like <code>192.168.1.1</code></p>
     <!-- <p>This calculator supports <code>+-*/^()</code>, whitespaces, and integers and floating numbers.</p> -->
     <!-- input is for input, div is for output -->
-    <input id="ip" value="255.255.255.255"></input>
-    <br>
-    <input id="subnet"></input>
-    <button type="button" id="booton">Push Me</button>
+    <form>
+        <div class="form-group">
+          <label for="ip">IP Address</label>
+          <input class="form-control" id="ip" aria-describedby="IPHelp" placeholder="Enter IP Address">
+          <small id="IPHelp" class="form-text text-muted">Please enter a valid IP address for now.</small>
+        </div>
+        <div class="form-group">
+          <label for="subnet">Number of subnets</label>
+          <input class="form-control" id="subnet" placeholder="Enter number of subnets (3,4,10 etc.)">
+        </div>
+        
+        <button type="button" class="btn btn-primary" id="booton">Push </button>
+      </form>
+
     <div id="start_results"></div>
     <div id="end_results"></div>
   </div>
