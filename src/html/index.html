@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,12 +7,18 @@
   <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self';" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://unpkg.com/popper.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
+  <script src="https://kit.fontawesome.com/c893428da3.js"></script>
   <script>
 
     function CheckOnlineStatus(msg) {
 
       var status = document.getElementById("status");
-      var condition = navigator.onLine ? "ONLINE" : "OFFLINE. NET CHAALU KAR YAAR";
+      var condition = navigator.onLine ? "Scripts loaded correctly" : "OFFLINE. Couldn't load scripts";
       var state = document.getElementById("state");
       state.innerHTML = condition;
 
@@ -28,19 +34,16 @@
       }, false);
     }
   </script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="https://unpkg.com/popper.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/bootstrap.bundle.js"></script>
-  <script src="https://kit.fontawesome.com/c893428da3.js"></script>
-
 </head>
-
+<!-- <div class="alert alert-success" role="alert">
+    A simple success alert—check it out!
+  </div> -->
 <body onload="Pageloaded()">
-  <div id="status">
-    <p id="state">Application Status:
-    </p>
+  <div id="status" class="alert alert-primary alert-dismissible fade show" role="alert">
+    <p id="state"></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
   </div>
 </body>
 
@@ -52,6 +55,7 @@
     <!-- <p>This calculator supports <code>+-*/^()</code>, whitespaces, and integers and floating numbers.</p> -->
     <!-- input is for input, div is for output -->
     <input id="ip" value="255.255.255.255"></input>
+    <br>
     <input id="subnet"></input>
     <button type="button" id="booton">Push Me</button>
     <div id="start_results"></div>
