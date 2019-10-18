@@ -19,8 +19,10 @@ booton.addEventListener('click', () => {
       console.error(error)
     } else {
       
-     result1.textContent = combined //combined is of type object. Either figure out how to split this, or interleave IPs
-      //result2.textContent = range_end
+      var res=combined.toString().split("+")//combined is a location object, needs a string conversion
+      //console.log(res)
+      result1.textContent = res[0] //combined is of type object. Either figure out how to split this, or interleave IPs
+      result2.textContent = res[1]
     }
   })
   
