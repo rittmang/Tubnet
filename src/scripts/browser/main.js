@@ -62,11 +62,17 @@ const selectPort = () => {
 
 const createPyProc = () => {
   let port = '' + selectPort()
-  let script = path.join(__dirname, '../python_scripts', 'sn-api.py')
-  pyProc = require('child_process').spawn('python3', [script, port])
+  let script = getScriptPath()
+  //let script = path.join(__dirname, '../python_scripts', 'sn-api.py')
+  if (guessPackaged()) {
+    pyProc = require('child_process').execFile(script, [port])
+  } else {
+    pyProc = require('child_process').spawn('python3', [script, port])
+  }
+  //pyProc = require('child_process').spawn('python3', [script, port])
   console.log('path found? wtf' + script)
   if (pyProc != null) {
-    console.log('child process success')
+    console.log('child process success on port'+port)
   }
 }
 
@@ -78,3 +84,21 @@ const exitPyProc = () => {
 
 app.on('ready', createPyProc)
 app.on('will-quit', exitPyProc)
+const PY_DIST_FOLDER = '../../../tubnetdist'
+const PY_FOLDER = '../python-scripts'
+const PY_MODULE = 'sn-api' // without .py suffix
+
+const guessPackaged = () => {
+  const fullPath = path.join(__dirname, PY_DIST_FOLDER)
+  return require('fs').existsSync(fullPath)
+}
+
+const getScriptPath = () => {
+  if (!guessPackaged()) {
+    return path.join(__dirname, PY_FOLDER, PY_MODULE + '.py')
+  }
+  if (process.platform === 'win32') {
+    return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE + '.exe')
+  }
+  return path.join(__dirname, PY_DIST_FOLDER, PY_MODULE, PY_MODULE)
+}
