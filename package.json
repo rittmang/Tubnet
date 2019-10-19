@@ -6,11 +6,19 @@
   "scripts": {
     "start": "electron ."
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rittmang/Tubnet.git"
+  },
   "keywords": [
     "subnet"
   ],
   "author": "Ritom Gupta",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rittmang/Tubnet/issues"
+  },
+  "homepage": "https://github.com/rittmang/Tubnet",
   "devDependencies": {
     "electron": "^6.0.12",
     "electron-packager": "^14.0.6",
