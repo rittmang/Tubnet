@@ -19,12 +19,39 @@ booton.addEventListener('click', () => {
       console.error(error)
     } else {
       
-      var res=combined.toString().split("+")//combined is a location object, needs a string conversion
+      //var res=combined.toString().split("+")//combined is a location object, needs a string conversion
+      var all=combined.toString().split(",")
+      var res1=all.slice(0,all.indexOf('+'))
+      var res2=all.slice(all.indexOf('+')+1)
       //console.log(res)
-      result1.textContent = res[0] //combined is of type object. Either figure out how to split this, or interleave IPs
-      result2.textContent = res[1]
+      //result1.textContent = res[0] //combined is of type object. Either figure out how to split this, or interleave IPs
+      //result2.textContent = res[1]
+      // document.getElementById('start_results').reset()
+      // document.getElementById('end_results').reset()
+      
+      document.getElementById('start_results').appendChild(makeUL(res1));
+      document.getElementById('end_results').appendChild(makeUL(res2));
+      //document.getElementById('end_results').appendChild(makeUL(res[1]));
     }
   })
   
 })
+function makeUL(array) {
+  // Create the list element:
+  var list = document.createElement('ul');
+
+  for(var i = 0; i < array.length; i++) {
+      // Create the list item:
+      var item = document.createElement('li');
+
+      // Set its contents:
+      item.appendChild(document.createTextNode(array[i]));
+
+      // Add it to the list:
+      list.appendChild(item);
+  }
+
+  // Finally, return the constructed list:
+  return list;
+}
 ip.dispatchEvent(new Event('input'))
