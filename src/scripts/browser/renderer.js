@@ -29,6 +29,11 @@ booton.addEventListener('click', () => {
       // document.getElementById('start_results').reset()
       // document.getElementById('end_results').reset()
       
+      var div1=document.getElementById('start_results')
+      while(div1.firstChild){div1.removeChild(div1.firstChild);}
+      var div2=document.getElementById('end_results')
+      while(div2.firstChild){div2.removeChild(div2.firstChild);}
+      
       document.getElementById('start_results').appendChild(makeUL(res1));
       document.getElementById('end_results').appendChild(makeUL(res2));
       //document.getElementById('end_results').appendChild(makeUL(res[1]));
@@ -39,11 +44,14 @@ booton.addEventListener('click', () => {
 function makeUL(array) {
   // Create the list element:
   var list = document.createElement('ul');
-
+  list.setAttribute("class","list-unstyled row")
+  // list.setAttribute("width","10%")
+  //list.setAttribute("float","left")
   for(var i = 0; i < array.length; i++) {
       // Create the list item:
       var item = document.createElement('li');
-
+      item.setAttribute("class","list-group-item col-12")
+      item.setAttribute("float","left")
       // Set its contents:
       item.appendChild(document.createTextNode(array[i]));
 

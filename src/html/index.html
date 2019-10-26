@@ -38,13 +38,14 @@
 <!-- <div class="alert alert-success" role="alert">
     A simple success alert—check it out!
   </div> -->
+
 <body onload="Pageloaded()">
   <div id="status" class="alert alert-primary alert-dismissible fade show" role="alert">
     <p id="state"></p>
-    
+
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 </body>
 <!-- <div class="input-group mb-3">
@@ -53,8 +54,8 @@
     </div>
     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
   </div> -->
-  
-  <body>
+
+<body>
   <div class=".mx-auto px-4">
     <br>
     <h1 class="display-6">Tubnet!</h1>
@@ -62,31 +63,25 @@
     <!-- <p>This calculator supports <code>+-*/^()</code>, whitespaces, and integers and floating numbers.</p> -->
     <!-- input is for input, div is for output -->
     <form>
-        <div class="form-group">
-          <label for="ip">IP Address</label>
-          <input class="form-control" id="ip" aria-describedby="IPHelp" placeholder="Enter IP Address">
-          <small id="IPHelp" class="form-text text-muted">Please enter a valid IP address for now.</small>
-        </div>
-        <div class="form-group">
-          <label for="subnet">Number of subnets</label>
-          <input class="form-control" id="subnet" placeholder="Enter number of subnets (3,4,10 etc.)">
-        </div>
-        
-        <button type="button" class="btn btn-primary" id="booton">Wakanda</button>
-      </form>
+      <div class="form-group">
+        <label for="ip">IP Address</label>
+        <input class="form-control" id="ip" aria-describedby="IPHelp" placeholder="Enter IP Address">
+        <small id="IPHelp" class="form-text text-muted">Please enter a valid IP address for now.</small>
+      </div>
+      <div class="form-group">
+        <label for="subnet">Number of subnets</label>
+        <input class="form-control" id="subnet" placeholder="Enter number of subnets (3,4,10 etc.)">
+      </div>
 
-    <div id="start_results"></div>
-    <div id="end_results"></div>
-  </div>
-  <div class="col-12 container .mx-auto px-4" style="height: 350px;">
-    <ul class="list-unstyled row">
-      <li class="list-group-item col-4">Test 1</li>
-      <li class="list-group-item col-4">Test 2</li>
-    </ul>
-    <ul class="list-unstyled row">
-      <li class="list-group-item col-4">Test 3</li>
-      <li class="list-group-item col-4">Test 4</li>
-    </ul>
+      <button type="button" class="btn btn-primary" id="booton">Wakanda</button>
+    </form>
+    <br>
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-sm-6 container .mx-auto px-4" style="height: 350px;" id="start_results"></div>
+        <div class="col-sm-6 container .mx-auto px-4" style="height: 350px;" id="end_results"></div>
+      </div>
+    <!-- </div> -->
   </div>
 </body>
 <script>
