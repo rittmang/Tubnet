@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "zerorpc": "^0.9.8"
-  }
+  },
   "publishConfig": {"registry": "https://npm.pkg.github.com/"}
 }
